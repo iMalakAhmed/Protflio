@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
-export default function Achievements({ achievements }) {
+interface AchievementsProps {
+  achievements: string[];
+}
+
+export default function Achievements({ achievements }: AchievementsProps) {
   return (
     <SectionWrapper title="Activities & Achievements">
       <motion.ul
@@ -21,3 +25,4 @@ export default function Achievements({ achievements }) {
     </SectionWrapper>
   );
 }
+

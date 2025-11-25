@@ -9,14 +9,15 @@ import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import AnimatedBackground from "./components/AnimatedBackground";
+import { MousePosition } from "./types";
 
 function App() {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMouse({ x: e.clientX, y: e.clientY });
     };
     
@@ -69,3 +70,4 @@ function App() {
 }
 
 export default App;
+

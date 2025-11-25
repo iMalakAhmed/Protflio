@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
+import { MousePosition } from "../types";
 
-export default function AnimatedBackground({ mouse }) {
+interface AnimatedBackgroundProps {
+  mouse: MousePosition;
+}
+
+export default function AnimatedBackground({ mouse }: AnimatedBackgroundProps) {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   // Blob 1 - Emerald, follows mouse with parallax
@@ -112,3 +117,4 @@ export default function AnimatedBackground({ mouse }) {
     </div>
   );
 }
+

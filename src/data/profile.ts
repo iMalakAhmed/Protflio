@@ -1,4 +1,6 @@
-export const profile = {
+import { Profile } from "../types";
+
+export const profile: Profile = {
   name: "Malak Shams",
   title: "Computer Science Student & Aspiring Full-Stack Developer",
   location: "Cairo, Egypt",

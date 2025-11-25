@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
+import { Profile } from "../types";
 
-export default function Contact({ profile }) {
+interface ContactProps {
+  profile: Profile;
+}
+
+export default function Contact({ profile }: ContactProps) {
   return (
     <SectionWrapper title="Contact">
       <motion.div

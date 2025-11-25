@@ -1,8 +1,13 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Profile } from "../types";
 
-export default function Hero({ profile }) {
-  const cardRef = useRef(null);
+interface HeroProps {
+  profile: Profile;
+}
+
+export default function Hero({ profile }: HeroProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
 
   // 3D tilt effect for highlight card
   const x = useMotionValue(0);
@@ -10,7 +15,7 @@ export default function Hero({ profile }) {
   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [5, -5]), { stiffness: 300, damping: 30 });
   const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-5, 5]), { stiffness: 300, damping: 30 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -184,7 +189,12 @@ export default function Hero({ profile }) {
   );
 }
 
-function TechLogo({ name, icon }) {
+interface TechLogoProps {
+  name: string;
+  icon: string;
+}
+
+function TechLogo({ name, icon }: TechLogoProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.15, filter: "brightness(1.2)" }}
@@ -203,3 +213,4 @@ function TechLogo({ name, icon }) {
     </motion.div>
   );
 }
+

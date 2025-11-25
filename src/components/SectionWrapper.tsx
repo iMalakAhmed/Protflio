@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-export default function SectionWrapper({ title, children }) {
+interface SectionWrapperProps {
+  title: string;
+  children: ReactNode;
+}
+
+export default function SectionWrapper({ title, children }: SectionWrapperProps) {
   return (
     <div className="w-full px-6 sm:px-10 lg:px-24">
       <motion.h2

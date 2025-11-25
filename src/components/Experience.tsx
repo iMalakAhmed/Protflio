@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
+import { Experience as ExperienceType } from "../types";
 
-export default function Experience({ experience }) {
+interface ExperienceProps {
+  experience: ExperienceType[];
+}
+
+export default function Experience({ experience }: ExperienceProps) {
   return (
     <SectionWrapper title="Experience">
       <div className="grid md:grid-cols-2 gap-6">
@@ -36,3 +41,4 @@ export default function Experience({ experience }) {
     </SectionWrapper>
   );
 }
+

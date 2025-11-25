@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Project } from "../types";
 
-const techIcons = {
+interface WorkSliderProps {
+  projects: Project[];
+}
+
+const techIcons: Record<string, string> = {
   ".NET Core": "⚙️",
   "Next.js": "▲",
   "SQL Server": "🗄️",
@@ -16,7 +21,7 @@ const techIcons = {
 };
 
 const variants = {
-  enter: (direction) => ({
+  enter: (direction: number) => ({
     x: direction > 0 ? 400 : -400,
     opacity: 0,
     scale: 0.8,
@@ -32,7 +37,7 @@ const variants = {
     rotateY: 0,
     zIndex: 1,
   },
-  exit: (direction) => ({
+  exit: (direction: number) => ({
     x: direction > 0 ? -400 : 400,
     opacity: 0,
     scale: 0.8,
@@ -42,12 +47,12 @@ const variants = {
   }),
 };
 
-export default function WorkSlider({ projects }) {
+export default function WorkSlider({ projects }: WorkSliderProps) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 
-  const goTo = (newIndex) => {
+  const goTo = (newIndex: number) => {
     if (newIndex === index) return;
     setDirection(newIndex > index ? 1 : -1);
     setIndex((newIndex + projects.length) % projects.length);
@@ -266,3 +271,4 @@ export default function WorkSlider({ projects }) {
     </div>
   );
 }
+
