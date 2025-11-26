@@ -8,14 +8,13 @@ export const profile: Profile = {
   phone: "+20 1097805772",
   links: {
     github: "https://github.com/iMalakAhmed",
-    linkedin: "https://www.linkedin.com",
+    linkedin: "https://www.linkedin.com/in/malak-shams-373a6329b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     vercel: "https://vercel.com",
   },
   education: [
     {
       school: "Nile University",
       program: "BSc Computer Science",
-      gpa: "3.76 / 4.0",
       period: "Oct 2022 – Aug 2026",
       details: [
         "Operating Systems, OOP, Data Structures & Algorithms, Databases, Computer Architecture, Data Analysis, Machine Learning.",
